@@ -2,11 +2,23 @@
   "name": "poetron",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "prestart": "npm run tsc",
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/body-parser": "^1.17.1",
+    "@types/express": "^4.17.2",
+    "@types/node": "^13.1.8",
+    "@types/puppeteer": "^2.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "puppeteer": "^2.0.0",
+    "typescript": "^3.7.5"
+  }
 }
