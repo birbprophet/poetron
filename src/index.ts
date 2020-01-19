@@ -5,7 +5,7 @@ const app = express();
 const port = 4001;
 app.use(bodyParser.json());
 
-app.post("/test", (req: any, res: any) => {
+app.post("/scrape", (req: any, res: any) => {
   res.send("app works");
 });
 

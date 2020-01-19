@@ -1,15 +1,6 @@
 import puppeteer from "puppeteer";
 
-interface IScrapeFunction {
-  (document: Document): {
-    scrapedItems: { [key: string]: string | string[] }[];
-    nextPageUrl: string | null;
-  };
-}
-
-export const puppeteerScraper = (scrapeFunction: IScrapeFunction) => (
-  url: string
-) => {
+export const scrapeFunction = (url: string) => {
   return new Promise(async (resolve, reject) => {
     try {
       const browser = await puppeteer.launch();
@@ -19,7 +10,8 @@ export const puppeteerScraper = (scrapeFunction: IScrapeFunction) => (
 
       await page.goto(url);
       const { scrapedItems, nextPageUrl } = await page.evaluate(() => {
-        return scrapeFunction(document);
+        /* Insert Scrape Function here */
+        return { scrapedItems: [], nextPageUrl: null };
       });
 
       browser.close();
